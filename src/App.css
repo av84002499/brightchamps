@@ -1,0 +1,126 @@
+/* Base Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.heading-txt {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.question {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.option-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.option-btn {
+  width: 48%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #007bff;
+  background-color: #f8f9fa;
+  color: #007bff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.option-btn.checked {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.option-btn:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+#next-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+#next-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  .container {
+      width: 90%;
+      padding: 10px;
+  }
+
+  .heading-txt {
+      font-size: 1.5rem;
+  }
+
+  .question {
+      font-size: 1rem;
+  }
+
+  .option-btn {
+      width: 100%;
+      font-size: 0.9rem;
+      padding: 8px;
+  }
+
+  #next-button {
+      font-size: 0.9rem;
+      padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .heading-txt {
+      font-size: 1.2rem;
+  }
+
+  .option-btn {
+      font-size: 0.8rem;
+  }
+
+  #next-button {
+      font-size: 0.8rem;
+  }
+}
+.option-btn.correct {
+  background-color: #4CAF50; /* Green for correct answer */
+  color: white;
+}
+
+.option-btn.wrong {
+  background-color: #f44336; /* Red for wrong answer */
+  color: white;
+}
+
