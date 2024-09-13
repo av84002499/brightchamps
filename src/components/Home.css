@@ -1,0 +1,43 @@
+/* Container for the two cards */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+  }
+  
+  /* Styling for each card (Start Quiz and Add Quiz) */
+  .home-card {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .home-card:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive design for mobile */
+  @media screen and (max-width: 768px) {
+    .home-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .home-card {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  

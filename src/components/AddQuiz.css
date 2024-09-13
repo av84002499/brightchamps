@@ -1,0 +1,139 @@
+/* Container */
+.quiz-container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  /* Heading */
+  .quiz-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+  }
+  
+  /* Form Group */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Label */
+  .form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Input Fields */
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 10px;
+    transition: border 0.3s;
+  }
+  
+  .form-input:focus {
+    border-color: #007BFF;
+  }
+  
+  /* Radio Group */
+  .radio-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .radio-option {
+    display: flex;
+    align-items: center;
+  }
+  
+  .radio-label {
+    margin-left: 5px;
+    color: #555;
+  }
+  
+  /* Align Button to the Right */
+  .form-actions {
+    display: flex;
+    justify-content: flex-end; /* Align the button to the right */
+    margin-top: 20px; /* Add some space above the button */
+  }
+  
+  /* Submit Button */
+  .submit-btn {
+    width: 10%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .quiz-container {
+      width: 80%;
+    }
+  
+    .form-input {
+      font-size: 14px;
+      padding: 8px;
+    }
+  
+    .radio-group {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .submit-btn {
+      width: 100%;
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .form-actions {
+      justify-content: center; /* Center the button on smaller screens */
+    }
+  
+    .quiz-heading {
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .quiz-container {
+      width: 85%;
+    }
+  
+    .quiz-heading {
+      font-size: 18px;
+    }
+  
+    .form-input {
+      font-size: 12px;
+      padding: 6px;
+    }
+  
+    .submit-btn {
+      font-size: 12px;
+      padding: 8px;
+    }
+  }
+  

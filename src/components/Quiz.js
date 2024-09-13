@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { QuizData } from '../Data/QuizData';
+
 import QuizResult from './QuizResult';
+import { useSelector, useDispatch } from 'react-redux';
 
 function Quiz() {
+    const quizzes = useSelector((state) => state.quiz.quizzes);
+    const dispatch = useDispatch();
+  
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
     const [clickedOption, setClickedOption] = useState(0);
     const [showResult, setShowResult] = useState(false);
     const [showCorrectAnswer, setShowCorrectAnswer] = useState(false); 
     const [timeLeft, setTimeLeft] = useState(10); 
+
+    useEffect(() =>{
+            console.log("quiz", quizzes)
+    },[quizzes])
 
     useEffect(() => {
         if (timeLeft > 0) {
@@ -28,7 +36,7 @@ function Quiz() {
 
     const changeQuestion = () => {
         updateScore();
-        if (currentQuestion < QuizData.length - 1) {
+        if (currentQuestion < quizzes.length - 1) {
             setCurrentQuestion(currentQuestion + 1);
             setClickedOption(0);
             setShowCorrectAnswer(false); 
@@ -38,14 +46,14 @@ function Quiz() {
     };
 
     const updateScore = () => {
-        if (clickedOption === QuizData[currentQuestion].answer) {
+        if (clickedOption === quizzes[currentQuestion].answer) {
             setScore(score + 1);
         }
     };
 
     const handleOptionClick = (index) => {
         setClickedOption(index + 1);
-        if (index + 1 !== QuizData[currentQuestion].answer) {
+        if (index + 1 !== quizzes[currentQuestion].answer) {
             setShowCorrectAnswer(true); 
         } else {
             setShowCorrectAnswer(false);
@@ -66,16 +74,16 @@ function Quiz() {
             <p className="heading-txt">Quiz APP</p>
             <div className="container">
                 {showResult ? (
-                    <QuizResult score={score} totalScore={QuizData.length} tryAgain={resetAll} />
+                    <QuizResult score={score} totalScore={quizzes.length} tryAgain={resetAll} />
                 ) : (
                     <>
                         <div className="question">
                             <span id="question-number">{currentQuestion + 1}. </span>
-                            <span id="question-txt">{QuizData[currentQuestion].question}</span>
+                            <span id="question-txt">{quizzes[currentQuestion].question}</span>
                         </div>
                         <div className="option-container">
-                            {QuizData[currentQuestion].options.map((option, i) => {
-                                const isCorrect = i + 1 === QuizData[currentQuestion].answer;
+                            {quizzes[currentQuestion].options.map((option, i) => {
+                                const isCorrect = i + 1 === quizzes[currentQuestion].answer;
                                 const isClicked = clickedOption === i + 1;
                                 return (
                                     <button
